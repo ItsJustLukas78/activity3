@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resturant name Order Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Place Your Order</h2>
+
+  <form method="post" action="order.php">
+
+    <!-- Customer Info -->
+    <fieldset>
+      <legend>Customer Info</legend>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+      <br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="541-123-4567" required>
+    </fieldset>
+
+    <!-- Food Order -->
+    <fieldset>
+      <legend>Food Order</legend>
+
+      <label for="entree">Choose a Entrée:</label>
+      <select id="entree" name="entree" required>
+        <option value="" disabled selected>-- Select a Entrée --</option>
+        <option value="Item 1">Item 1</option>
+        
+      </select>
+      
+      <label for="beverage">Choose a Beverage:</label>
+      <select id="beverage" name="beverage" required>
+        <option value="" disabled selected>-- Select a Beverage --</option>
+        <option value="Item 1">Item 1</option>
+        
+      </select>
+      
+      <label for="dessert">Choose a Dessert:</label>
+      <select id="dessert" name="dessert" required>
+        <option value="" disabled selected>-- Select a Dessert --</option>
+        <option value="Item 1">Item 1</option>
+        
+      </select>
+
+      <br>
+
+      <p>Add-ons</p>
+
+      <div style="display: flex; align-items: center;">
+        <input type="checkbox" id="Extra Something" name="addons[]" value="Extra Something">
+        <label style="margin-top: 0;" for="cheese">Extra Something</label>
+      </div>
+      <br>
+      <div style="display: flex; align-items: center;">
+        <input type="checkbox" id="Extra Something2" name="addons[]" value="Extra Something">
+        <label style="margin-top: 0;" for="sauce">Extra Something</label>
+      </div>
+      <br>
+      <div style="display: flex; align-items: center;">
+        <input type="checkbox" id="Extra Something3" name="addons[]" value="Extra Something">
+        <label style="margin-top: 0;" for="bread">Extra Something</label>
+      </div>
+      <br>
+
+      <label for="total">Total:</label>
+      <input type="text" id="total" name="total" value="$0.00" readonly>
+      
+    </fieldset>
+
+    <!-- Dining Preferences -->
+    <fieldset>
+      <legend>Dining Method</legend>
+      <br>
+
+      <div style="display: flex; align-items: center;">
+        <input type="radio" id="pickup" name="dining" value="Pickup" required>
+        <label style="margin-top: 0;" for="pickup">Pickup</label>
+      </div>
+      <br>
+      <div style="display: flex; align-items: center;">
+        <input type="radio" id="delivery" name="dining" value="Delivery" required>
+        <label style="margin-top: 0;" for="delivery">Delivery</label>
+      </div>
+      <br>
+      <div style="display: flex; align-items: center;">
+        <input type="radio" id="eat-in" name="dining" value="Eat-In" required>
+        <label style="margin-top: 0;" for="eat-in">Eat-In</label>
+      </div>
+
+      <br>
+
+      <label for="time">Pick-up/Delivery Time:</label>
+      <input type="time" id="time" name="time" required>
+      
+      <br>
+
+      <label for="instructions">Special Instructions:</label><br>
+      <textarea id="instructions" name="instructions" rows="4" cols="50" placeholder="Optional: delivery address, table number, etc."></textarea>
+    
+    </fieldset>
+
+    <!-- Submit -->
+    <br>
+    <input type="submit" value="Submit Order">
+  </form>
+
+</body>
+</html>
